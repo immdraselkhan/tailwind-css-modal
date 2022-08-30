@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>tailwind CSS Modal</title>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- modal trigger button -->
+    <buttom id="modal-button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 rounded cursor-pointer">Open Modal</buttom>
+    <!-- modal window -->
+    <div id="modal-box" class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-blue-400 bg-opacity-30 transform scale-0 transition-transform duration-300">
+        <!-- moda contetns -->
+        <div class="w-[90%] md:w-4/5 lg:w-[45%] max-w-sm sm:max-w-screen-sm bg-white rounded">
+            <!-- modal content header -->
+            <div class="flex justify-between items-center border-b mt-2 px-8 py-3">
+                <h3 class="text-xl font-semibold">Modal Title</h3>
+                <button id="close-button" type="button" class="text-white px-3 py-1.5 bg-blue-700 hover:bg-blue-800 rounded">Close</button>
+            </div>
+            <!-- modal content body -->
+            <div class="text-lg font-semibold mb-2 px-8 py-5">
+                <p>Something here</p>
+                <p>Something here</p>
+                <p>Something here</p>
+            </div>
+        </div>
+    </div>
+    <!-- modal script -->
+    <script>
+        const modalButton = document.getElementById('modal-button');
+        const modalBox = document.getElementById('modal-box');
+        const closeButton = document.getElementById('close-button');
+        modalButton.addEventListener('click', () => modalBox.classList.add('scale-100'));
+        closeButton.addEventListener('click', () => modalBox.classList.remove('scale-100'));
+    </script>
+</body>
+</html>
